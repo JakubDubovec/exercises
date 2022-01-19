@@ -1,0 +1,14 @@
+SELECT movie_time, movie_name FROM movie WHERE movie_time > 125; 
+/*1.1 Vyberie meno a čas film*/
+SELECT rating_of_10, movie_id FROM rating WHERE rating_of_10 > 7; 
+/* 1.2 Vyberie filmy ktoré majú hodnotenie nad 7 */
+SELECT username FROM users WHERE password LIKE 'y%'; 
+/* Vyberie užívateľov ktorý majú heslo začínajúce sa na 'y' */
+SELECT * FROM movie ORDER BY release_year; 
+/* Zoradí filmy podľa roku */
+SELECT * FROM actor WHERE name LIKE 'j%'; 
+/*Vyberie hercov ktorým meno začína na j */
+SELECT actor_id, COUNT(*) AS mnozstvo FROM movie_cast GROUP BY movie_id; 
+/* 3.2 Napíše počet hercov ktorí hrajú v tom istom filme podľa id*/
+SELECT user_id, rating_of_10, COUNT(*) AS pocet FROM rating GROUP BY rating_of_10 HAVING rating_of_10 > 8; 
+/* 3.3 spočíta koLko používateľov dalo hodnotenie nad 8 a vypíše, ktorí to sú */
